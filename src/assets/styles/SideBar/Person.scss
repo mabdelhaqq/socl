@@ -1,0 +1,17 @@
+.person {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+
+    .imgpe {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px; 
+    }
+    .namepe {
+        font-size: 15px;
+    }
+}
