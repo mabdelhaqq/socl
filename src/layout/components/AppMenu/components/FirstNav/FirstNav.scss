@@ -1,24 +1,27 @@
-.links2 {
+.links {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: space-between;
+    cursor: pointer;
 
-    .itemlink {
+
+    .itemlinks {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         margin-bottom: 10px;
         width: 100%;
 
-        .imgitem {
+        .itemicon {
+            font-size: 20px;
+            color: gray;
             margin-right: 15px;
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
+            width: 20px;
+            height: 20px;
         }
 
-        .titlelinks{
+        .titlelink{
             color: gray;
             font-size: 15px;
         }

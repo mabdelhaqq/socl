@@ -1,7 +1,6 @@
 import React from 'react'
 import Person from './components/Person/Person'
-import "../../../../../assets/styles/SideBar/People.scss"
-
+import "./People.scss"
 const People = () => {
   return (
     <div className='peoplecontainer'>

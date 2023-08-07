@@ -1,5 +1,4 @@
-import "../../../../../../../assets/styles/SideBar/Person.scss"
-
+import "./Person.scss"
 interface Props {
     url: string,
     name: string

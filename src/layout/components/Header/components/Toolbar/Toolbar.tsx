@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCommentAlt, faBell, faArrowDown } from '@fortawesome/free-solid-svg-icons';
-import "../../../../../assets/styles/Header/Toolbar.scss"
-
+// import "../../../../../assets/styles/Header/Toolbar.scss"
+import "./Toolbar.scss"
 const Toolbar = () => {
   return (
     <nav className='mainnav'>

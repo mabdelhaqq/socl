@@ -1,8 +1,7 @@
 import React from 'react'
 import FirstNav from './components/FirstNav/FirstNav'
 import SecondNav from './components/SecondNav/SecondNav'
-import "../../../assets/styles/AppMenu/AppMenu.scss"
-
+import "./AppMenu.scss"
 const AppMenu = () => {
   return (
     <aside className='appmenu'>

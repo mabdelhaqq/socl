@@ -1,7 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFeed, faUserFriends, faEnvelopeOpen, faVideo, faPhotoFilm, faFile } from '@fortawesome/free-solid-svg-icons';
-import "../../../../../assets/styles/AppMenu/FirstNav.scss"
-
+import "./FirstNav.scss"
 
 const FirstNav = () => {
   return (
