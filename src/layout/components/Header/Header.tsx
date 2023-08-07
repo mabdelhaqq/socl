@@ -1,6 +1,6 @@
-import Logo from "./components/Logo/Logo"
-import Search from "./components/Search/Search"
-import Toolbar from "./components/Toolbar/Toolbar"
+import Logo from "./components/Logo"
+import Search from "./components/Search"
+import Toolbar from "./components/Toolbar"
 import "./Header.scss";
 
 const Header = () => {

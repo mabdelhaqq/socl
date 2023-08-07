@@ -1,7 +1,7 @@
-import img1 from "../../../../../assets/images/fi.png"
-import img2 from "../../../../../assets/images/gr.png"
-import img3 from "../../../../../assets/images/ui.png"
-import img4 from "../../../../../assets/images/web.png"
+import img1 from "../../../../assets/images/fi.png"
+import img2 from "../../../../assets/images/gr.png"
+import img3 from "../../../../assets/images/ui.png"
+import img4 from "../../../../assets/images/web.png"
 import "./SecondNav.scss"
 const SecondNav = () => {
   return (

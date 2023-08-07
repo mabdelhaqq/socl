@@ -1,6 +1,6 @@
 import React from 'react'
-import FirstNav from './components/FirstNav/FirstNav'
-import SecondNav from './components/SecondNav/SecondNav'
+import FirstNav from './components/FirstNav'
+import SecondNav from './components/SecondNav'
 import "./AppMenu.scss"
 const AppMenu = () => {
   return (

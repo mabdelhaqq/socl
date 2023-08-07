@@ -1,6 +1,6 @@
 import React from 'react'
-import SearchBox from './component/SearchBox/SearchBox'
-import People from './component/People/People'
+import SearchBox from './component/SearchBox'
+import People from './component/People'
 import "./SideBar.scss"
 const SideBar = () => {
   return (
