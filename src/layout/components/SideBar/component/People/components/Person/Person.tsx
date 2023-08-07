@@ -1,9 +1,15 @@
 import "../../../../../../../assets/styles/SideBar/Person.scss"
-const Person = () => {
+
+interface Props {
+    url: string,
+    name: string
+}
+
+const Person = (props: Props) => {
   return (
     <div className="person">
-        <img src={"https://api.dicebear.com/6.x/avataaars/svg?backgroundColor=c0aede&seed=p"} alt="personimg" className="imgpe" />
-        <h6 className="namepe">Alex Guerrero</h6>
+        <img src={props.url} alt="personimg" className="imgpe" />
+        <h6 className="namepe">{props.name}</h6>
     </div>
   )
 }

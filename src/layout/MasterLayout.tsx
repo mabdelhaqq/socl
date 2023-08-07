@@ -15,7 +15,7 @@ const MasterLayout = () => {
             </section> */}
             <SideBar />
         </section>
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

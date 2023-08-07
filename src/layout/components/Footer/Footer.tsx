@@ -1,8 +1,9 @@
-import React from 'react'
-
+import "../../../assets/styles/Footer/Footer.scss"
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+        <p>&copy; 2023 Socl. All rights reserved.</p>
+    </footer>
   )
 }
 

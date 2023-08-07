@@ -1,17 +1,18 @@
 import React from "react";
-import { BrowserRouter ,Route, Routes } from 'react-router-dom';
-
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
+
+const router= createBrowserRouter ([
+  { 
+    path: "/",
+    element: <App/>  
+  },
+]);
 
 const AppRoutes: React.FC = () => {
   return (
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<App />} />
-    //   </Routes>
-    // </BrowserRouter>
-    <App/>
+    <RouterProvider router={router} />
+    
   );
 };
 
