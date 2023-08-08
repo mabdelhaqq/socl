@@ -4,7 +4,7 @@ import People from './component/People'
 import "./SideBar.scss"
 const SideBar = () => {
   return (
-    <aside className='friendmenu'>
+    <aside className='friend-menu'>
         <SearchBox />
         <p className='paside'>FRIENDS</p>
         <People />

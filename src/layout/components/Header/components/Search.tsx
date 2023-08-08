@@ -4,9 +4,9 @@ import "./Search.scss"
 
 const Search = () => {
   return (
-    <div className='searchbox'>
-        <input placeholder=' Search' className='searchinput'/>
-        <FontAwesomeIcon icon={faSearch} className='searchicon' />
+    <div className='search-box'>
+        <input placeholder=' Search' className='search-input'/>
+        <FontAwesomeIcon icon={faSearch} className='search-icon' />
     </div>
   )
 }

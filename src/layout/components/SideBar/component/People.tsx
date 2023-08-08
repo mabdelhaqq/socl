@@ -27,7 +27,7 @@ const peopleData = [
 
 const People = () => {
   return (
-    <div className='peoplecontainer'>
+    <div className='people-container'>
       {peopleData.map((person, index) => (
         <Person key={index} url={person.url} name={person.name} />
       ))}

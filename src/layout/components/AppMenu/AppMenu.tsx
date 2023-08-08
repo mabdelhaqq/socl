@@ -4,7 +4,7 @@ import SecondNav from './components/SecondNav'
 import "./AppMenu.scss"
 const AppMenu = () => {
   return (
-    <aside className='appmenu'>
+    <aside className='app-menu'>
         <FirstNav />
         <p className='pmenu'>PAGES YOU LIKE</p>
         <SecondNav />
