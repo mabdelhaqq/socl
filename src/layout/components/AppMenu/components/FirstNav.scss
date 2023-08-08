@@ -1,0 +1,30 @@
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: space-between;
+    cursor: pointer;
+
+
+    .item-links {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 10px;
+        width: 100%;
+
+        .item-icon {
+            font-size: 20px;
+            color: gray;
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+
+        .title-link{
+            color: gray;
+            font-size: 15px;
+        }
+        
+    }
+}
