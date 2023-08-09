@@ -1,0 +1,47 @@
+
+.log-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50%;
+    margin: 10px auto;
+    background-color: gainsboro;
+    padding: 20px;
+    border: 2px solid #6D3DDA;
+    border-radius: 5px;
+
+    .wel {
+        text-align: center;
+        font-size: 30px;
+        color:#6D3DDA;
+    }
+
+    .input-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px 0;
+
+        label {
+            color: #6D3DDA;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        .input-user {
+            padding: 10px;
+            border: 3px solid #6D3DDA;
+            border-radius: 5px;
+            background-color: gainsboro;
+        }
+    }
+
+    .btn-login {
+        padding: 10px 20px;
+        background-color: #6D3DDA;
+        color: white;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+    }
+}

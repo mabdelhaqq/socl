@@ -8,7 +8,7 @@ import "../assets/styles/MasterLayout.scss"
 const MasterLayout = () => {
   return (
     <div>
-        <Header />
+        <Header/>
         <section className='row'>
             <div className='col-2'><AppMenu /></div>
             <section className='col-7 main'>
