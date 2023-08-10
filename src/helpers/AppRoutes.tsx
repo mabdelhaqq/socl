@@ -2,16 +2,16 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import Login from "../auth/Login";
-import { UserProvider } from "./app-store";
+import { AppProvider } from "./app-store";
 
 const router= createBrowserRouter ([
   { 
     path: "/",
-    element: <UserProvider> <App/> </UserProvider>  
+    element: <AppProvider> <App/> </AppProvider>  
   },
   {
     path: "/app/login",
-    element: <UserProvider> <Login/> </UserProvider>
+    element: <AppProvider> <Login/> </AppProvider>
   }
 ]);
 

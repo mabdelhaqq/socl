@@ -1,41 +1,26 @@
-import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-const UserContext = createContext<UserContextType | null>(null);
+interface AppContextType {
+  username: string;
+  setUsername: (name: string) => void;
+}
 
-export const useUserContext = (): UserContextType => {
-    const context = useContext(UserContext);
-    if (!context) {
-      throw new Error();
-    }
-    return context;
-  };
+const AppContext = createContext<AppContextType | undefined>(undefined);
 
-interface Props {
-    children: ReactNode;
-  }
-  interface UserContextType {
-    username: string;
-    setUsername: (username: string) => void;
-  }
-
-export const UserProvider = ({ children }:Props) => {
+export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [username, setUsername] = useState('');
 
-  useEffect(() => {
-    const storedname = localStorage.getItem('username');
-    if (storedname) {
-      setUsername(storedname);
-    }
-  }, []);
-
-  const updateUsername = (newUsername: string) => {
-    setUsername(newUsername);
-    localStorage.setItem('username', newUsername);
-  };
   return (
-    <UserContext.Provider value={{username, setUsername: updateUsername}}>
+    <AppContext.Provider value={{ username, setUsername }}>
       {children}
-    </UserContext.Provider>
+    </AppContext.Provider>
   );
 };
 
+export const useAppContext = (): AppContextType => {
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error();
+  }
+  return context;
+};

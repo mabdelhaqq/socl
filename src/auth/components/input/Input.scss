@@ -1,13 +1,10 @@
 .second-container{
-    position: absolute;
-    right: 50px;
-    top: 25%;
-    width: 40%;
     border: 3px solid #6D3DDA;
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    width: 85%;
     .input-container {
         display: flex;
         justify-content: flex-start;
@@ -18,14 +15,13 @@
             color: #6D3DDA;
             font-size: 20px;
             margin-right: 5px;
-            width: 30%;
         }
         .input-user {
             padding: 10px;
             border: 3px solid #6D3DDA;
             border-radius: 5px;
             background-color: gainsboro;
-            width: 70%;
+            width: 50%;
         }
     }
 
@@ -36,6 +32,6 @@
         border-radius: 5px;
         border: none;
         cursor: pointer;
-        width: 50%;
+        width: 100px;
     }
 }
