@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useUserContext } from '../../../helpers/user-context'
+import { useUserContext } from '../../../helpers/app-store'
 import { useNavigate } from 'react-router-dom'
 import "./Input.scss"
 

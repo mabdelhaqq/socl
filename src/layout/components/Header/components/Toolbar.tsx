@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCommentAlt, faBell, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import "./Toolbar.scss"
-import { useUserContext } from '../../../../helpers/user-context'
+import { useUserContext } from '../../../../helpers/app-store'
 
 const Toolbar = () => {
   const { username } = useUserContext();
