@@ -5,10 +5,17 @@
     justify-content: flex-end;
     align-items: center;
     margin: 0 20px;
+    .name-user {
+      color: #6D3DDA;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 10px;
+      display: inline-block;
+      cursor: pointer;
+    }
       .item {
         margin: 0 7px;
         display: inline-block;
-        text-decoration: none;
         color: gray;
         cursor: pointer;
       }

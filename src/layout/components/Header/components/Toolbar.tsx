@@ -1,9 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserPlus, faCommentAlt, faBell, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import "./Toolbar.scss"
+import { useAppContext } from '../../../../helpers/app-store'
+
 const Toolbar = () => {
+  const { username } = useAppContext();
   return (
     <nav className='main-nav'>
+        <span className='name-user'>{username}</span>
         <FontAwesomeIcon icon={faUserPlus} className='item' />
         <FontAwesomeIcon icon={faCommentAlt} className='item' />
         <FontAwesomeIcon icon={faBell} className='item' />

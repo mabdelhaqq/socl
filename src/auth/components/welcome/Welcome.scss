@@ -1,0 +1,16 @@
+.we-con {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .wel {
+        font-size: 40px;
+        font-weight: bold;
+        color:#6D3DDA;
+    }
+    .img-logo {
+        height: 80px;
+        width: auto;
+    }
+
+}
