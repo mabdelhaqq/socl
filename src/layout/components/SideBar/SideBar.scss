@@ -8,10 +8,10 @@
     right: 0;
     top: 0;
     padding: 70px 10px;
-    width: 25%;
     background-color: white;
     overflow-y: auto;
     overflow-x: hidden;
+    z-index: 10;
 
     .paside {
         margin-top: 10px;

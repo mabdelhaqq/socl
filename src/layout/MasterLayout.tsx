@@ -20,11 +20,11 @@ const MasterLayout = () => {
     <div>
         <Header/>
         <section className='row'>
-            <div className='col-2'><AppMenu /></div>
-            <section className='col-7 main'>
+            <div className='col-xs-12 col-md-2 d-none d-md-block'><AppMenu /></div>
+            <section className='col-xs-12 col-md-7 main'>
                 {/* <Outlet /> */}
             </section>
-            <div className='col-3'><SideBar /></div>
+            <div className='col-xs-12 col-md-3 d-none d-md-block'><SideBar /></div>
         </section>
         <Footer />
     </div>
