@@ -1,41 +1,45 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Post from './Post';
-import { useFilterStore } from '../helpers/filter-store';
+import { PostsStore } from '../helpers/post-store';
 import "./PostList.scss"
+import Spinner from './Spinner';
+
+const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
+interface Post {
+    is_verified: boolean;
+}
 
 const PostList = () => {
-  const { verified } = useFilterStore();
-  const [posts, setPosts] = useState([] as Array<{ is_verified: boolean }>);
+  const { verified } = PostsStore();
+  const [posts, setPosts] = useState<Post[]>([]);
   const [load, setLoad] = useState(true);
+  const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
-  const fetchAxios = async () => {
+  const getData = async () => {
     try {
-    setLoad(true);
-    const response = await axios.get('https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8');
-    setPosts(response.data);
-    }
-    catch(error){
-        console.error('Error: ', error);
-    }
-    finally{
-        setLoad(false);
+      setLoad(true);
+      const response = await axios.get(API_LINK);
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Error: ', error);
+    } finally {
+      setLoad(false);
     }
   };
 
   useEffect(() => {
-    fetchAxios();
+    getData();
   }, []);
 
-  const filteredPosts = verified ? posts.filter((post) => post.is_verified) : posts;
+  useEffect(() => {
+    const newFilteredPosts = verified ? posts.filter((post) => post.is_verified) : posts;
+    setFilteredPosts(newFilteredPosts);
+  }, [verified, posts]);
 
   return (
-    <div className='m'>
-      {load ? 
-      ( <div className="spinner">
-        <div className="cube1"></div>
-        <div className="cube2"></div>
-        </div> ) : (filteredPosts.map((post, index) => <Post key={index} post={post} />))}
+    <div className='main-post'>
+      {load ? (<Spinner />) : (filteredPosts.map((post, index) => <Post key={index} post={post} />))}
     </div>
   );
 };

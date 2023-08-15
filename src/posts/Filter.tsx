@@ -1,8 +1,8 @@
-import { useFilterStore } from "../helpers/filter-store"
+import { PostsStore } from "../helpers/post-store"
 import "./Filter.scss"
 
 const Filter = () => {
-    const { verified, toggleVerified } = useFilterStore();
+    const { verified, toggleVerified } = PostsStore();
 
   return (
     <label className="label">

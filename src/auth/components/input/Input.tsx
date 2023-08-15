@@ -10,7 +10,7 @@ const Input = () => {
         if (!username) {
             return alert("Please enter your username");
         }
-        navigate('/');
+        navigate('/posts');
     };
     return (
         <div className='second-container'>
