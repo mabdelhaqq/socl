@@ -13,6 +13,7 @@ const MasterLayout = () => {
   useEffect(() => {
     if (!username) {
       navigate('/login');
+      return;
     }
   }, [username, navigate]);
   return (
