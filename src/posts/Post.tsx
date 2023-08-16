@@ -4,24 +4,11 @@ import img1 from "../assets/images/love.png"
 import img2 from "../assets/images/comment.png"
 import img3 from "../assets/images/share.png"
 import "./Post.scss"
+import { PostData } from './type';
 
-export interface PostProps {
-  post: {
-    user_id?: number;
-    user_name?: string;
-    user_avatar?: string;
-    body?: string;
-    hashtags?: string;
-    image_url?: string;
-    likes?: number;
-    comments?: number;
-    shares?: number;
-    timestamp?: string;
-    country?: string | null;
-    language?: string;
-    is_verified?: boolean;
-  };
-}
+interface PostProps {
+    post: PostData;
+  }
 
 const Post: React.FC<PostProps> = ({ post }) => {
     return (

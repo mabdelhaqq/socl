@@ -1,11 +1,18 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 
-interface FilterStore {
+export interface Post {
+  is_verified: boolean;
+}
+interface PostsStore {
   verified: boolean;
+  posts: Post[];
   toggleVerified: () => void;
+  setPosts: (posts: Post[]) => void;
 }
 
-export const PostsStore = create<FilterStore>((set) => ({
+export const usePostsStore = create<PostsStore>((set) => ({
   verified: false,
-  toggleVerified: () => set((state: FilterStore) => ({ verified: !state.verified })),
+  posts: [],
+  toggleVerified: () => set((state) => ({ verified: !state.verified })),
+  setPosts: (posts) => set({ posts }),
 }));

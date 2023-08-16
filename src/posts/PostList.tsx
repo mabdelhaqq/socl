@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Post from './Post';
-import { PostsStore } from '../helpers/post-store';
+import { usePostsStore } from '../helpers/post-store';
 import "./PostList.scss"
 import Spinner from './Spinner';
 
@@ -11,8 +11,7 @@ interface Post {
 }
 
 const PostList = () => {
-  const { verified } = PostsStore();
-  const [posts, setPosts] = useState<Post[]>([]);
+  const { verified, posts, setPosts } = usePostsStore();
   const [load, setLoad] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
