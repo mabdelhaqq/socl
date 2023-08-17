@@ -18,7 +18,6 @@ const PostList = () => {
 
   useEffect(() => {
     const getData = async () => {
-        console.log("getData called")
         try {
           setLoad(true);
           const response = await axios.get(API_LINK);
