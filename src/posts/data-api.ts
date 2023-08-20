@@ -7,6 +7,7 @@ interface PostProps {
 
 const postsKey = 'my_posts';
 
+
 export const dataAPI = {
   getAllPosts: async ():Promise<PostProps[]> => {
     await sleep(2000);
@@ -36,4 +37,7 @@ export const dataAPI = {
     const updatedPosts = posts.filter((post: PostProps) => post.post.user_id !== id);
     localStorage.setItem(postsKey, JSON.stringify(updatedPosts));
   },
+  setPosts:async (posts: PostProps[]):Promise<void> => {
+    localStorage.setItem(postsKey, JSON.stringify(posts));
+  }
 };

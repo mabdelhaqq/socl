@@ -6,6 +6,7 @@ import "./PostList.scss"
 import Spinner from './Spinner';
 import { toast } from 'react-toastify';
 
+
 const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
 interface Post {
     is_verified: boolean;
@@ -44,3 +45,4 @@ const PostList = () => {
 };
 
 export default PostList;
+

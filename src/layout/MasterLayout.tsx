@@ -9,33 +9,32 @@ import { useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { dataAPI } from '../posts/data-api'
 
+const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
 
 const MasterLayout = () => {
   const { username } = useAppContext();
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!username) {
-      navigate('/login');
-      return;
-    }
+    if (!username)  return navigate('/login');
 
     const fetchData = async () => {
-    const dataKey = 'my_posts'
-    const storedPosts = localStorage.getItem(dataKey);
-    if(!storedPosts){
-      try{
-        const response = await axios.get('https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8');
+    const storedPosts = await dataAPI.getAllPosts();
+    dataAPI.setPosts(storedPosts);
+    if (!storedPosts || storedPosts.length === 0) {
+      try {
+        const response = await axios.get(API_LINK);
         const data = response.data;
-        localStorage.setItem('my_posts', JSON.stringify(data));
-      }catch(error){
-        toast.error("An error occured in fetching data");
+        dataAPI.setPosts(data); 
+      } catch (error) {
+        toast.error("An error occurred in fetching data");
       }
     }
   };
   fetchData();
-  }, [username, navigate]);
+}, [username, navigate]);
   return (
     <div>
         <Header/>
