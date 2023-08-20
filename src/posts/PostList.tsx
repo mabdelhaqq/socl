@@ -4,6 +4,8 @@ import Post from './Post';
 import { usePostsStore } from '../helpers/post-store';
 import "./PostList.scss"
 import Spinner from './Spinner';
+import { toast } from 'react-toastify';
+
 
 const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
 interface Post {
@@ -15,20 +17,19 @@ const PostList = () => {
   const [load, setLoad] = useState(true);
   const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
-  const getData = async () => {
-    try {
-      setLoad(true);
-      const response = await axios.get(API_LINK);
-      setPosts(response.data);
-    } catch (error) {
-      console.error('Error: ', error);
-    } finally {
-      setLoad(false);
-    }
-  };
-
   useEffect(() => {
-    getData();
+    const getData = async () => {
+        try {
+          setLoad(true);
+          const response = await axios.get(API_LINK);
+          setPosts(response.data);
+        } catch (error) {
+          toast.error("An error occured in fetching data");
+        } finally {
+          setLoad(false);
+        }
+      };
+      getData();
   }, []);
 
   useEffect(() => {
@@ -44,3 +45,4 @@ const PostList = () => {
 };
 
 export default PostList;
+
