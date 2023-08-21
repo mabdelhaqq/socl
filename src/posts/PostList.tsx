@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Post from './Post';
 import { usePostsStore } from '../helpers/post-store';
 import "./PostList.scss"
 import Spinner from './Spinner';
 import { toast } from 'react-toastify';
+import { dataAPI } from './data-api';
 
 
-const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
 interface Post {
     is_verified: boolean;
 }
@@ -21,8 +20,9 @@ const PostList = () => {
     const getData = async () => {
         try {
           setLoad(true);
-          const response = await axios.get(API_LINK);
-          setPosts(response.data);
+          const allPosts = await dataAPI.getAllPosts();
+          setPosts(allPosts);
+          console.log(allPosts);
         } catch (error) {
           toast.error("An error occured in fetching data");
         } finally {
@@ -45,4 +45,3 @@ const PostList = () => {
 };
 
 export default PostList;
-

@@ -6,6 +6,7 @@ import img3 from "../assets/images/share.png"
 import "./Post.scss"
 import { PostData } from './type';
 
+
 interface PostProps {
     post: PostData;
   }
