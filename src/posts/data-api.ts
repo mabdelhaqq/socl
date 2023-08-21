@@ -4,12 +4,16 @@ import { PostData } from './type';
 interface PostProps {
     post: PostData;
   }
+  interface Post {
+    is_verified: boolean;
+}
 
 const postsKey = 'my_posts';
 
 
 export const dataAPI = {
-  getAllPosts: async ():Promise<PostProps[]> => {
+
+  getAllPosts: async ():Promise<Post[]> => {
     await sleep(2000);
     const postsJSON = localStorage.getItem(postsKey);
     return postsJSON ? JSON.parse(postsJSON) : [];

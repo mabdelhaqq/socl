@@ -19,22 +19,23 @@ const MasterLayout = () => {
 
   useEffect(() => {
     if (!username)  return navigate('/login');
-
-    const fetchData = async () => {
-    const storedPosts = await dataAPI.getAllPosts();
-    dataAPI.setPosts(storedPosts);
-    if (!storedPosts || storedPosts.length === 0) {
-      try {
-        const response = await axios.get(API_LINK);
-        const data = response.data;
-        dataAPI.setPosts(data); 
-      } catch (error) {
-        toast.error("An error occurred in fetching data");
-      }
-    }
-  };
-  fetchData();
 }, [username, navigate]);
+
+  useEffect(() =>{
+    const fetchData = async () => {
+      const storedPosts = await dataAPI.getAllPosts();
+      if (!storedPosts || storedPosts.length === 0) {
+        try {
+          const response = await axios.get(API_LINK);
+          const data = response.data;
+          dataAPI.setPosts(data); 
+        } catch (error) {
+          toast.error("An error occurred in fetching data");
+        }
+      }
+    };
+    fetchData();
+  },[])
   return (
     <div>
         <Header/>
