@@ -11,13 +11,14 @@ const PostDetails: React.FC = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      if (id) {
-        const postId = parseInt(id, 10);
+      if (!id){
+        return ;
+      } 
+        const postId = +id;
         const fetchedPost = await dataAPI.getPost(postId);
         setPost(fetchedPost);
-      }
+      
     };
-  
     fetchPost();
   }, [id]);
 
