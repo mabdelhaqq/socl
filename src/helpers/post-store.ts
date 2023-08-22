@@ -2,6 +2,18 @@ import { create } from 'zustand';
 
 export interface Post {
   is_verified: boolean;
+  user_id?: number;
+    user_name?: string;
+    user_avatar?: string;
+    body?: string;
+    hashtags?: string;
+    image_url?: string;
+    likes?: number;
+    comments?: number;
+    shares?: number;
+    timestamp?: string;
+    country?: string | null;
+    language?: string;
 }
 interface PostsStore {
   verified: boolean;

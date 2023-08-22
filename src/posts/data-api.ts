@@ -1,4 +1,5 @@
 import { sleep } from "../utils";
+import Post from "./Post";
 import { PostData } from './type';
 
 interface PostProps {
@@ -6,10 +7,21 @@ interface PostProps {
   }
   interface Post {
     is_verified: boolean;
+    user_id?: number;
+    user_name?: string;
+    user_avatar?: string;
+    body?: string;
+    hashtags?: string;
+    image_url?: string;
+    likes?: number;
+    comments?: number;
+    shares?: number;
+    timestamp?: string;
+    country?: string | null;
+    language?: string;
 }
 
 const postsKey = 'my_posts';
-
 
 export const dataAPI = {
 
@@ -19,11 +31,10 @@ export const dataAPI = {
     return postsJSON ? JSON.parse(postsJSON) : [];
   },
 
-  getPost: async (id: number):Promise<PostProps> => {
-    await sleep(2000);
-    const postsJSON = localStorage.getItem(postsKey);
-    const posts = postsJSON ? JSON.parse(postsJSON) : [];
-    return posts.find((post: PostProps) => post.post.user_id === id);
+  getPost: async (id: number): Promise<Post | null> => {
+    const allPosts = await dataAPI.getAllPosts();
+    const post = allPosts.find((p:Post) => p.user_id === id);
+    return post || null;
   },
 
   addPost: async (newPost: PostProps):Promise<void> => {

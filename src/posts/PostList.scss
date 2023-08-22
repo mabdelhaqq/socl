@@ -4,6 +4,11 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
+
+	.post-link {
+		text-decoration: none;
+		color: black;
+	}
 }
 
 @-webkit-keyframes sk-cubemove {
