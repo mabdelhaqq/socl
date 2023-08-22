@@ -1,11 +1,31 @@
-import React from 'react'
-import { PostData } from './type';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { dataAPI } from './data-api';
+import Spinner from './Spinner';
+import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
 
-interface PostProps {
-    post: PostData;
+const PostDetails: React.FC = () => {
+  const { id } = useParams<{ id:string }>();
+  const [post, setPost] = useState<Post | null>(null);
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (!id){
+        return ;
+      } 
+        const postId = +id;
+        const fetchedPost = await dataAPI.getPost(postId);
+        setPost(fetchedPost);
+      
+    };
+    fetchPost();
+  }, [id]);
+
+  if (!post) {
+    return <Spinner />;
   }
-const PostDetails: React.FC<PostProps> = ({post}) => {
+
   return (
     <div className="post">
       <div className="post-header">
@@ -29,4 +49,4 @@ const PostDetails: React.FC<PostProps> = ({post}) => {
   );
 };
 
-export default PostDetails
+export default PostDetails;
