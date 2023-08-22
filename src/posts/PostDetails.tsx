@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { dataAPI } from './data-api';
 import Spinner from './Spinner';
 import { Post } from '../helpers/post-store';
+import "./PostDetails.scss"
 
 const PostDetails: React.FC = () => {
   const { id } = useParams<{ id:string }>();
@@ -14,7 +15,6 @@ const PostDetails: React.FC = () => {
         const postId = parseInt(id, 10);
         const fetchedPost = await dataAPI.getPost(postId);
         setPost(fetchedPost);
-        console.log(fetchedPost);
       }
     };
   
@@ -27,23 +27,23 @@ const PostDetails: React.FC = () => {
 
   return (
     <div className="post">
-    <div className="post-header">
-      <img src={post.user_avatar} alt="User Avatar" />
-      <div>
-        <h3>{post.user_name}</h3>
-        <p>{post.timestamp}</p>
+      <div className="post-header">
+        <img src={post.user_avatar} alt="User Avatar" />
+        <div>
+          <h3>{post.user_name}</h3>
+          <p>{post.timestamp}</p>
+        </div>
       </div>
-    </div>
-    <div className="post-content">
-      <p>{post.body}</p>
-      <img src={post.image_url} alt="Post Image" />
-      <p>Hashtags: {post.hashtags}</p>
-    </div>
-    <div className="post-footer">
-      <p>Likes: {post.likes}</p>
-      <p>Comments: {post.comments}</p>
-      <p>Shares: {post.shares}</p>
-    </div>
+      <div className="post-content">
+        <p>{post.body}</p>
+        <img src={post.image_url} alt="Post Image" />
+        <p>Hashtags: {post.hashtags}</p>
+      </div>
+      <div className="post-footer">
+        <p>Likes: {post.likes}</p>
+        <p>Comments: {post.comments}</p>
+        <p>Shares: {post.shares}</p>
+      </div>
     </div>
   );
 };
