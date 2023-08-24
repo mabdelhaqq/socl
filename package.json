@@ -19,6 +19,7 @@
     "immer": "^10.0.2",
     "node-sass": "^9.0.0",
     "prime-react": "^1.0.0",
+    "primeicons": "^6.0.1",
     "primereact": "^9.6.2",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
