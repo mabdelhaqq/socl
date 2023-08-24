@@ -4,6 +4,7 @@ import Login from '../auth/Login';
 import HomePage from '../posts/HomePage';
 import MasterLayout from '../layout/MasterLayout';
 import PostDetails from '../posts/PostDetails';
+import AddNewPost from '../posts/AddNewPost';
 
 const router = createBrowserRouter([
   {
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
     element: <MasterLayout />,
     children: [
       { path: '/posts', element: <HomePage /> },
-      { path: '/posts/:id', element: <PostDetails/>}
+      { path: '/posts/:id', element: <PostDetails/>},
+      { path: '/create', element: <AddNewPost/>}
     ],
   },
   {

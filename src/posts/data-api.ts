@@ -37,7 +37,7 @@ export const dataAPI = {
     return post || null;
   },
 
-  addPost: async (newPost: PostProps):Promise<void> => {
+  addPost: async (newPost: Post):Promise<void> => {
     await sleep(2000);
     const postsJSON = localStorage.getItem(postsKey);
     const posts = postsJSON ? JSON.parse(postsJSON) : [];

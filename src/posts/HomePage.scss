@@ -1,4 +1,16 @@
 .home {
+    .link-new {
+        text-decoration: none;
+        color: white;
+        width: 100%;
+        .add-post{
+            width: 100%;
+            text-align: center;
+            padding: 5px;
+            background-color: #6D3DDA;
+        }
+    }
+
     .feed-header {
         .recent {
             color: gray;
