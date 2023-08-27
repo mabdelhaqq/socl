@@ -6,8 +6,11 @@
     outline: none;
 }
 
-.main {
-    background-color: gainsboro;
-    margin: auto;
-    margin-top: 50px;
+.all {
+    min-width: 350px;
+    .main {
+        background-color: gainsboro;
+        margin: auto;
+        margin-top: 50px;
+    }
 }

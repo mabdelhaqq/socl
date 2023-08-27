@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useAppContext } from '../../../helpers/app-store'
 import { useNavigate } from 'react-router-dom'
 import "./Input.scss"
@@ -12,6 +13,9 @@ const Input = () => {
         }
         navigate('/posts');
     };
+    useEffect( ()=> {
+        setUsername('');
+    }, [])
     return (
         <div className='second-container'>
             <input type='text' placeholder='username' value={username} id="user" 
