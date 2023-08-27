@@ -4,8 +4,13 @@ import { dataAPI } from './data-api';
 import Spinner from './Spinner';
 import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom'
+
 
 const PostDetails: React.FC = () => {
+  const navigate = useNavigate();
   const { id } = useParams<{ id:string }>();
   const [post, setPost] = useState<Post | null>(null);
 
@@ -29,10 +34,15 @@ const PostDetails: React.FC = () => {
   return (
     <div className="post">
       <div className="post-header">
-        <img src={post.user_avatar} alt="User Avatar" />
-        <div>
-          <h3>{post.user_name}</h3>
-          <p>{post.timestamp}</p>
+        <div className='user-info'>
+          <img src={post.user_avatar} alt="User Avatar" />
+          <div>
+            <h3>{post.user_name}</h3>
+            <p>{post.timestamp}</p>
+          </div>
+        </div>
+        <div className='back'>
+          <FontAwesomeIcon icon={faArrowCircleLeft} className='left' onClick={()=> {navigate('/posts')}} />
         </div>
       </div>
       <div className="post-content">
