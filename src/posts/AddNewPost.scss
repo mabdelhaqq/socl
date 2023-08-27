@@ -5,11 +5,20 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #fff;
-    
-    h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
+      .header-new {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+        }
+        .left {
+          color: red;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      }
   }
   
   .form-group {

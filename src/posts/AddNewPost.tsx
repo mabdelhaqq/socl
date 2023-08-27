@@ -9,6 +9,9 @@ import { useAppContext } from '../helpers/app-store';
 import 'primereact/resources/themes/saga-blue/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+
 
 
   const countries = [
@@ -68,7 +71,10 @@ const AddNewPost = () => {
         };
   return (
     <div className="create-post-container">
+      <div className='header-new'>
       <h2>Create a New Post</h2>
+      <FontAwesomeIcon icon={faDeleteLeft} className='left' onClick={()=> {navigate('/posts')}} />
+      </div>
       <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
         {({ isSubmitting }) => (
           <Form>

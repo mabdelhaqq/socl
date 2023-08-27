@@ -37,16 +37,16 @@ const MasterLayout = () => {
     fetchData();
   },[])
   return (
-    <div>
-        <Header/>
-        <section className='row'>
-            <div className='col-xs-12 col-md-2 d-none d-md-block'><AppMenu /></div>
-            <section className='col-xs-12 col-md-7 main'>
-              <Outlet/>
-            </section>
-            <div className='col-xs-12 col-md-3 d-none d-md-block'><SideBar /></div>
-        </section>
-        <Footer />
+    <div className='all'>
+      <Header/>
+      <section className='row'>
+        <div className='col-xs-12 col-md-2 d-none d-md-block'><AppMenu /></div>
+          <section className='col-xs-12 col-md-7 main'>
+            <Outlet/>
+          </section>
+          <div className='col-xs-12 col-md-3 d-none d-md-block'><SideBar /></div>
+      </section>
+      <Footer />
     </div>
   )
 }
