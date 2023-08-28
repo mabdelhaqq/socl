@@ -39,7 +39,7 @@ const MasterLayout = () => {
   return (
     <div className='all'>
       <Header/>
-      <section className='row'>
+      <section className='row all-main'>
         <div className='col-xs-12 col-md-2 d-none d-md-block'><AppMenu /></div>
           <section className='col-xs-12 col-md-7 main'>
             <Outlet/>

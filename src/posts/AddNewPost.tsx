@@ -47,7 +47,7 @@ const AddNewPost = () => {
         const randomId = Math.floor(Math.random() * 900) + 101;
         const newPost = {
             hashtags: values.title,
-            country: values.country,
+            country: country,
             is_verified: values.verified,
             body: values.body,
             likes: 0,

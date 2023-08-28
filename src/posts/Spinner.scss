@@ -3,7 +3,7 @@ $background-color_1: #333;
 .spinner {
 	margin: 100px auto;
 	width: 40px;
-	height: 40px;
+	height: calc( 100vh - 400px );
 	position: relative;
     .cube1 {
         background-color: $background-color_1;

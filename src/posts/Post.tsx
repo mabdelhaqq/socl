@@ -36,7 +36,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       </div>
       <div className="sus">
         <h4 className="he">#{post.hashtags}</h4>
-        <p>{post.body}</p>
+        <p className="body">{post.body}</p>
       </div>
     </article>
   );

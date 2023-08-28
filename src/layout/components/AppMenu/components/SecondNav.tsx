@@ -9,21 +9,29 @@ const secondNavItems = [
       imgSrc: img1,
       altText: 'img1',
       title: 'Fashion Design',
+      new: false,
+      count: 0,
     },
     {
       imgSrc: img2,
       altText: 'img2',
       title: 'Graphic Design',
+      new: true,
+      count: 25,
     },
     {
       imgSrc: img3,
       altText: 'img3',
       title: 'UI/UX Community',
+      new: false,
+      count: 0,
     },
     {
       imgSrc: img4,
       altText: 'img4',
       title: 'Web Designer',
+      new: false,
+      count: 0,
     },
   ];
   
@@ -34,6 +42,7 @@ const secondNavItems = [
           <div key={index} className='item-link'>
             <img src={item.imgSrc} alt={item.altText} className="img-item" />
             <span className='title-links'>{item.title}</span>
+            {item.new ? (<div className="count">{item.count}</div>):<></>}
           </div>
         ))}
       </nav>

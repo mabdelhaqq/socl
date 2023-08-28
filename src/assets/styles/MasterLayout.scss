@@ -8,9 +8,14 @@
 
 .all {
     min-width: 350px;
+    .all-main {
+        width: 100%;
+        margin: auto;
+    }
     .main {
         background-color: gainsboro;
         margin: auto;
         margin-top: 50px;
+        padding: 0;
     }
 }
