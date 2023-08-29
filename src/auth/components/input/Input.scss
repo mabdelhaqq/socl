@@ -16,6 +16,22 @@
             margin-bottom: 10px;
         }
 
+        .role-checkbox {
+            margin: 10px 0;
+            
+            label {
+            display: flex;
+            align-items: center;
+            color: #6D3DDA;
+            font-weight: bold;
+        
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+            }
+        }
+  
+
     .btn-login {
         padding: 10px 20px;
         background-color: #6D3DDA;

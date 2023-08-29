@@ -6,6 +6,7 @@ import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleLeft, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Authorize from './Authorize';
 
 
 const PostDetails: React.FC = () => {
@@ -53,7 +54,9 @@ const PostDetails: React.FC = () => {
         </div>
         <div className='back'>
           <FontAwesomeIcon icon={faArrowCircleLeft} className='icon' onClick={()=> {navigate('/posts')}} title='Back to the posts'/>
-          <FontAwesomeIcon icon={faTrashAlt} className='icon' onClick={handleRemove} title='Delete post'/>
+          <Authorize allowedRoles={['admin']}>
+            <FontAwesomeIcon icon={faTrashAlt} className='icon' onClick={handleRemove} title='Delete post'/>
+          </Authorize>
         </div>
       </div>
       <div className='all-content'>
