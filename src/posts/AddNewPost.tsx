@@ -26,15 +26,30 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
     { label: "Poland", value: "Poland" },
 
   ];
+  const languages = [
+    { label: "Arabic", value: "Arabic" },
+    { label: "Indonesian", value: "Indonesian" },
+    { label: "Italian", value: "Italian" },
+    { label: "Engilsh", value: "English" },
+    { label: "Kazakh", value: "Kazakh" },
+    { label: "Dhivehi", value: "Dhivehi" },
+    { label: "Malagasy", value: "Malagasy" },
+    { label: "Zulu", value: "Zulu" },
+    { label: "Tajik", value: "Tajik" },
+    { label: "Azeri", value: "Azeri" },
+
+  ];
   
 const AddNewPost = () => {
     const { username } =useAppContext();
     const navigate = useNavigate();
     const [country, setCountry ]= useState();
+    const [language, setLanguage ]= useState();
 
     const initialValues = {
         title: '',
         country: '',
+        language: '',
         verified: false,
         body: '',
         img: "http://dummyimage.com/217x100.png/ff4444/ffffff",
@@ -48,6 +63,7 @@ const AddNewPost = () => {
         const newPost = {
             hashtags: values.title,
             country: country,
+            language: language,
             is_verified: values.verified,
             body: values.body,
             likes: 0,
@@ -97,6 +113,19 @@ const AddNewPost = () => {
                 optionValue="value"
                 placeholder="Choose your country"
                 onChange={(e) => setCountry(e.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="language">Language</label>
+              <Dropdown
+                inputId="language"
+                name="language"
+                value={language}
+                options={languages}
+                optionLabel="label"
+                optionValue="value"
+                placeholder="Choose your language"
+                onChange={(e) => setLanguage(e.value)}
               />
             </div>
             <div className="form-group-check">

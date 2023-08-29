@@ -5,7 +5,7 @@ import Spinner from './Spinner';
 import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faArrowCircleLeft, faTrashAlt, faHeart, faComment, faShare, faEarth, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import Authorize from './Authorize';
 
 
@@ -59,19 +59,25 @@ const PostDetails: React.FC = () => {
           </Authorize>
         </div>
       </div>
-      <div className='all-content'>
-      <div className='img-post'>
+      <div className='all-content row'>
+      <div className='img-post col-12 col-lg-6'>
         <img src={post.image_url} alt="Post Image" />
       </div>
-      <div className="post-content">
+      <div className="post-content col-12 col-lg-6">
         <p className='hashtags'>#{post.hashtags}</p>
         <p>{post.body}</p>
         </div>
       </div>
-      <div className="post-footer">
-        <p>Likes: {post.likes}</p>
-        <p>Comments: {post.comments}</p>
-        <p>Shares: {post.shares}</p>
+      <div className='footer row'>
+      <div className="post-footer col-12 col-lg-6">
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faHeart}/><h6>{post.likes}</h6></div>
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faComment}/><h6>{post.comments}</h6></div>
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faShare}/><h6>{post.shares}</h6></div>
+      </div>
+      <div className='post-second-footer col-12 col-lg-6'>
+      <div className='info-re'><FontAwesomeIcon className='reaction' icon={faEarth}/><h6>{post.country}</h6></div>
+      <div className='info-re'><FontAwesomeIcon className='reaction' icon={faLanguage}/><h6>{post.language}</h6></div>
+      </div>
       </div>
     </div>
   );
