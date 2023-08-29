@@ -4,20 +4,29 @@
     flex-wrap: nowrap;
     justify-content: flex-end;
     align-items: center;
-    margin: 0 20px;
     .name-user {
       color: #6D3DDA;
       font-size: 20px;
       font-weight: bold;
-      margin: 0 10px;
+      margin: 0 1%;
       display: inline-block;
       cursor: pointer;
+        &:hover{
+          opacity: 0.85;
+          }
     }
       .item {
-        margin: 0 7px;
+        margin: 0 1%;
         display: inline-block;
         color: gray;
         cursor: pointer;
+        font-size: 20px;
+        transition: transform 0.3s ease;
+        
+        &:hover{
+            opacity: .8;
+            transform: scale(1.2);
+            }
       }
       .img-user {
         width: 25px;

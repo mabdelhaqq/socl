@@ -40,8 +40,10 @@ const secondNavItems = [
       <nav className='links2'>
         {secondNavItems.map((item, index) => (
           <div key={index} className='item-link'>
+            <div className="info-page">
             <img src={item.imgSrc} alt={item.altText} className="img-item" />
             <span className='title-links'>{item.title}</span>
+            </div>
             {item.new ? (<div className="count">{item.count}</div>):<></>}
           </div>
         ))}

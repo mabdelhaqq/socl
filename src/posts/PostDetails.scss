@@ -18,51 +18,68 @@
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          margin-right: 10px;
+          margin-right: 5px;
         }
     
         h3 {
           margin: 0;
-          font-size: 1.2rem;
+          font-size: 16px;
+          font-weight: bold;
         }
     
         p {
           margin: 0;
-          font-size: 0.8rem;
+          font-size: 12px;
           color: #777;
         }
       }
       .back {
-        .left {
+        .icon {
           color: red;
           font-size: 20px;
           cursor: pointer;
+          margin: 0 10px
         }
       }
     }
-  
-    .post-content {
+    .all-content {
       margin-top: 10px;
-  
-      p {
-        margin: 0;
-        font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+
+      .post-content {
+        width: 47.5%;
+        display: flex;
+        flex-direction: column;
+        p.hashtags {
+          color: #6D3DDA;
+          font-style: italic;
+        }
+    
+        p {
+          margin: 0;
+          font-size: 15px;
+          font-family:Arial, Helvetica, sans-serif;
+          font-weight: bold;
+        }  
       }
-  
-      img {
-        max-width: 100%;
-        margin-top: 10px;
+      .img-post {
+        width: 47.5%;
+        img {
+          width: 100%;
+        }
       }
-  
-      p.hashtags {
-        color: #555;
-        font-style: italic;
-      }
+    
     }
   
     .post-footer {
       margin-top: 10px;
       display: flex;
+      justify-content: space-around;
   
       p {
         margin-right: 20px;

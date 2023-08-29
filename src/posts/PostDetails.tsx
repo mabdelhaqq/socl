@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { dataAPI } from './data-api';
 import Spinner from './Spinner';
 import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom'
+import { faArrowCircleLeft, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 const PostDetails: React.FC = () => {
@@ -26,7 +25,18 @@ const PostDetails: React.FC = () => {
     };
     fetchPost();
   }, [id]);
-
+  const handleRemove = async () => {
+    if (!id) {
+      return;
+    }
+    const postId = +id;
+    try {
+      await dataAPI.removePost(postId);
+      navigate('/posts');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   if (!post) {
     return <Spinner />;
   }
@@ -42,13 +52,18 @@ const PostDetails: React.FC = () => {
           </div>
         </div>
         <div className='back'>
-          <FontAwesomeIcon icon={faArrowCircleLeft} className='left' onClick={()=> {navigate('/posts')}} />
+          <FontAwesomeIcon icon={faArrowCircleLeft} className='icon' onClick={()=> {navigate('/posts')}} title='Back to the posts'/>
+          <FontAwesomeIcon icon={faTrashAlt} className='icon' onClick={handleRemove} title='Delete post'/>
         </div>
       </div>
-      <div className="post-content">
-        <p>{post.body}</p>
+      <div className='all-content'>
+      <div className='img-post'>
         <img src={post.image_url} alt="Post Image" />
-        <p>Hashtags: {post.hashtags}</p>
+      </div>
+      <div className="post-content">
+        <p className='hashtags'>#{post.hashtags}</p>
+        <p>{post.body}</p>
+        </div>
       </div>
       <div className="post-footer">
         <p>Likes: {post.likes}</p>

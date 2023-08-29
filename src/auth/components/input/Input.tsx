@@ -19,7 +19,7 @@ const Input = () => {
     return (
         <div className='second-container'>
             <input type='text' placeholder='username' value={username} id="user" 
-            onChange={ (e) => {setUsername(e.target.value)}} className='input-user'/>
+            onChange={ (e) => {setUsername(e.target.value)}} className='input-user' required/>
             <button onClick={handleLogin} className='btn-login'>Login</button>
         </div>
     )

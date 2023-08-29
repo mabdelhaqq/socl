@@ -3,8 +3,12 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
     cursor: pointer;
+    padding: 10px 5px;
+
+    &:hover {
+        background-color: #f0f0f0;
+      }
   
     .person-details {
       display: flex;
