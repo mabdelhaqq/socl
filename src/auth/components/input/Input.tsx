@@ -4,9 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import "./Input.scss"
 
 const Input = () => {
-    const { username, setUsername } = useAppContext();
+    const { username, setUsername, role, setRole } = useAppContext();
     const navigate = useNavigate();
-    const { role, setRole } = useAppContext();
 
     const handleLogin = () => {
         if (!username) {
