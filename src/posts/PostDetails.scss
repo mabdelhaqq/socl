@@ -5,6 +5,7 @@
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    height: 100vh;
     .post-header {
       display: flex;
       justify-content: space-between;
@@ -17,54 +18,86 @@
           width: 50px;
           height: 50px;
           border-radius: 50%;
-          margin-right: 10px;
+          margin-right: 5px;
         }
     
         h3 {
           margin: 0;
-          font-size: 1.2rem;
+          font-size: 16px;
+          font-weight: bold;
         }
     
         p {
           margin: 0;
-          font-size: 0.8rem;
+          font-size: 12px;
           color: #777;
         }
       }
       .back {
-        .left {
+        .icon {
           color: red;
           font-size: 20px;
           cursor: pointer;
+          margin: 0 10px
         }
       }
     }
-  
-    .post-content {
-      margin-top: 10px;
-  
-      p {
-        margin: 0;
-        font-size: 1rem;
-      }
-  
-      img {
-        max-width: 100%;
-        margin-top: 10px;
-      }
-  
-      p.hashtags {
-        color: #555;
-        font-style: italic;
-      }
-    }
-  
-    .post-footer {
+    .all-content {
       margin-top: 10px;
       display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 10px;
+
+      .post-content {
+        display: flex;
+        flex-direction: column;
+        p.hashtags {
+          color: gray;
+          font-style: italic;
+        }
+    
+        p {
+          margin: 0;
+          font-size: 15px;
+          font-family:Arial, Helvetica, sans-serif;
+          font-weight: bold;
+        }  
+      }
+      .img-post {
+        img {
+          width: 100%;
+        }
+      }
+    
+    }
   
-      p {
-        margin-right: 20px;
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .post-footer, .post-second-footer {
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+    
+        .info-re {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .reaction{
+            font-size: 18px;
+            margin-right: 5px;
+            color: gray;
+          }
+          h6 {
+            color: gray;
+            font-size: 18px;
+            margin-top: 5px;
+          }
+        }
       }
     }
   }

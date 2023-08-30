@@ -8,8 +8,8 @@ const Login = () => {
     
   return (
     <div className='log-container row'>
-        <div className="col-xs-12 col-md-6 text-center"><Welcome/></div>
-        <div className="col-xs-12 col-md-6"><Input/></div>
+        <div className="col-12 col-md-6"><Welcome/></div>
+        <div className="col-12 col-md-6"><Input/></div>
     </div>
   )
 }

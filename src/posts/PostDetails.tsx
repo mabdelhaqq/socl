@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { dataAPI } from './data-api';
 import Spinner from './Spinner';
 import { Post } from '../helpers/post-store';
 import "./PostDetails.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom'
+import { faArrowCircleLeft, faTrashAlt, faHeart, faComment, faShare, faEarth, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import Authorize from './Authorize';
 
 
 const PostDetails: React.FC = () => {
@@ -26,7 +26,18 @@ const PostDetails: React.FC = () => {
     };
     fetchPost();
   }, [id]);
-
+  const handleRemove = async () => {
+    if (!id) {
+      return;
+    }
+    const postId = +id;
+    try {
+      await dataAPI.removePost(postId);
+      navigate('/posts');
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
   if (!post) {
     return <Spinner />;
   }
@@ -42,18 +53,31 @@ const PostDetails: React.FC = () => {
           </div>
         </div>
         <div className='back'>
-          <FontAwesomeIcon icon={faArrowCircleLeft} className='left' onClick={()=> {navigate('/posts')}} />
+          <FontAwesomeIcon icon={faArrowCircleLeft} className='icon' onClick={()=> {navigate('/posts')}} title='Back to the posts'/>
+          <Authorize allowedRoles={['admin']}>
+            <FontAwesomeIcon icon={faTrashAlt} className='icon' onClick={handleRemove} title='Delete post'/>
+          </Authorize>
         </div>
       </div>
-      <div className="post-content">
-        <p>{post.body}</p>
+      <div className='all-content row'>
+      <div className='img-post col-12 col-lg-6'>
         <img src={post.image_url} alt="Post Image" />
-        <p>Hashtags: {post.hashtags}</p>
       </div>
-      <div className="post-footer">
-        <p>Likes: {post.likes}</p>
-        <p>Comments: {post.comments}</p>
-        <p>Shares: {post.shares}</p>
+      <div className="post-content col-12 col-lg-6">
+        <p className='hashtags'>#{post.hashtags}</p>
+        <p>{post.body}</p>
+        </div>
+      </div>
+      <div className='footer row'>
+      <div className="post-footer col-12 col-lg-6">
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faHeart}/><h6>{post.likes}</h6></div>
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faComment}/><h6>{post.comments}</h6></div>
+        <div className='info-re'><FontAwesomeIcon className='reaction' icon={faShare}/><h6>{post.shares}</h6></div>
+      </div>
+      <div className='post-second-footer col-12 col-lg-6'>
+      <div className='info-re'><FontAwesomeIcon className='reaction' icon={faEarth}/><h6>{post.country}</h6></div>
+      <div className='info-re'><FontAwesomeIcon className='reaction' icon={faLanguage}/><h6>{post.language}</h6></div>
+      </div>
       </div>
     </div>
   );
