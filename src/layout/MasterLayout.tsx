@@ -4,8 +4,6 @@ import Footer from './components/Footer/Footer'
 import AppMenu from './components/AppMenu/AppMenu'
 import SideBar from './components/SideBar/SideBar'
 import "../assets/styles/MasterLayout.scss"
-import { useAppContext } from '../helpers/app-store'
-import { useNavigate } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import axios from 'axios'
 import { toast } from 'react-toastify'
@@ -14,12 +12,6 @@ import { dataAPI } from '../posts/data-api'
 const API_LINK = 'https://mocki.io/v1/418eafe2-1002-4145-94f2-370a4eb34be8';
 
 const MasterLayout = () => {
-  const { username } = useAppContext();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!username)  return navigate('/login');
-}, [username, navigate]);
 
   useEffect(() =>{
     const fetchData = async () => {
