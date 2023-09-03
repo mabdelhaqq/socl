@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFeed, faUserFriends, faEnvelopeOpen, faVideo, faPhotoFilm, faFile } from '@fortawesome/free-solid-svg-icons';
+import { faFeed, faUserFriends, faEnvelopeOpen, faVideo, faPhotoFilm, faFile, faChartSimple } from '@fortawesome/free-solid-svg-icons';
 import "./FirstNav.scss"
 import { Link } from 'react-router-dom';
 
@@ -8,6 +8,11 @@ const navigationItems = [
       icon: faFeed,
       title: 'Feed',
       path: '/posts'
+    },
+    {
+      icon: faChartSimple,
+      title: 'Analytics',
+      path: '/analytics'
     },
     {
       icon: faUserFriends,
