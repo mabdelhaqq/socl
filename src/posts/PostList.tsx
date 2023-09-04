@@ -5,8 +5,6 @@ import "./PostList.scss"
 import Spinner from './Spinner';
 import { toast } from 'react-toastify';
 import { dataAPI } from './data-api';
-import { Link } from 'react-router-dom';
-
 
 interface Post {
     is_verified: boolean;
@@ -52,9 +50,7 @@ const PostList = () => {
   return (
     <div className='main-post'>
       {load ? (<Spinner />) : (filteredPosts.map((post, index) => 
-      <Link key={index} to={`/posts/${post.user_id}`} className='post-link'>
       <Post key={index} post={post} />
-      </Link>
       ))}
     </div>
   );

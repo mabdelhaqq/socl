@@ -87,6 +87,18 @@
                 width: 20px;
             }
         }
+        .delete {
+            padding: 2px;
+            .delete-icon {
+                height: 20px;
+                width: 20px;
+                color: red;
+                cursor: pointer;        
+                    &:hover{
+                        opacity: .8;
+                        }
+            }
+        }
     }
     .sus {
         width: 100%;
