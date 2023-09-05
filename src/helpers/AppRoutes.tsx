@@ -17,13 +17,12 @@ const router = createBrowserRouter([
       { path: '/posts/:id', element: <PrivateRoute path="/" element={<PostDetails />} /> },
       { path: '/create', element: <PrivateRoute path="/" element={<AddNewPost />} /> },
       { path: '/analytics', element: <PrivateRoute path="/" element={<Analytics />} /> }
-
-    ],
+    ]
   },
   {
     path: '/login',
-    element: <Login />,
-  },
+    element: <Login />
+  }
 ]);
 
 const AppRoutes: React.FC = () => {
