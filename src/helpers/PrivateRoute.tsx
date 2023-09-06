@@ -3,17 +3,20 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAppContext } from './app-store';
 
 interface RouteProps {
-    path: string;
-    element: React.ReactElement;
-  }
-const PrivateRoute:React.FC<RouteProps> = ({ path, element}) => {
+  path: string;
+  element: React.ReactElement;
+}
+const PrivateRoute: React.FC<RouteProps> = ({ path, element }) => {
   const { username } = useAppContext();
   const isAuthenticated = Boolean(username);
-  console.log(isAuthenticated);
 
   return isAuthenticated ? (
-    <Routes><Route path={path} element={element} /> </Routes>) 
-    : (<Navigate to="/login" />);
+    <Routes>
+      <Route path={path} element={element} />{' '}
+    </Routes>
+  ) : (
+    <Navigate to="/login" />
+  );
 };
 
 export default PrivateRoute;

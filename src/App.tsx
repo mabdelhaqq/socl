@@ -1,4 +1,4 @@
-import MasterLayout from "./layout/MasterLayout";
+import MasterLayout from './layout/MasterLayout';
 
 function App() {
   return (
